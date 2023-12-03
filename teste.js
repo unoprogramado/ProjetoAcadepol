@@ -1,7 +1,7 @@
-// const express = require("express")
-// const app = express()
-// const path = require("path")
-// const {engine}  = require("express-handlebars");
+const express = require("express")
+const app = express()
+const path = require("path")
+const {engine}  = require("express-handlebars");
 // const expressHbs = require("express-handlebars");
 // const Sequelize = require("sequelize")
 // const session = require("express-session")
@@ -20,12 +20,20 @@
 // app.use(passport.initialize())
 // app.use(passport.session())
 
-// app.engine('handlebars',engine({defaultLayout: 'main'}))
-// app.set('view engine', 'handlebars')
+app.engine('handlebars',engine({defaultLayout: 'main'}))
+// app.engine("handlebars", engine({defaultLayout: "main"}));
+
+app.set('view engine', 'handlebars')
+app.set("views", path.join(__dirname, "views"));
+
+
+// app.set("view engine", "handlebars");
 // app.set("views", path.join(__dirname, "views"));
+
 // var hbs = expressHbs.create({});
 
 // app.use(express.static(path.join(__dirname + '../../' + '/public')))
+app.use(express.static(__dirname + '../../' + '/public'));
 
 // app.use(express.urlencoded({extended: false}))
 // app.use(express.json())
@@ -58,6 +66,17 @@
 //     res.render("desligamento")
 
 // })
+
+
+app.get("/",function(req, res){
+    
+      res.render('desligamento')
+   
+   })
+
+app.listen(5000, () => {
+    console.log("Server is running on port 5000!");
+});
 
 // app.get("/atribuicao",isAuthenticated,function(req, res){
     
@@ -118,29 +137,17 @@
 // app.listen(8081, function(){
 //     console.log("Servidor rondando ")
 // })
-const express = require("express");
-const {engine} = require("express-handlebars");
+
+
 // const router = require("./router/index.router");
-const path = require("path");
-const app = express();
 
-app.use(express.static(__dirname + '../../' + '/public'));
 
-app.engine("handlebars", engine({
-    defaultLayout: "main",
-    // layoutsDir: path.join(__dirname, "views", "layouts")
-}));
-app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, "views"));
+
+
+
+
 
 // app.use(router);
-app.get("/",function(req, res){
-    
-      res.render('desligamento')
-   
-   })
-app.listen(5000, () => {
-    console.log("Server is running on port 5000!");
-});
+
 
 
