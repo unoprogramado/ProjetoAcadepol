@@ -24,7 +24,7 @@ app.engine('handlebars',engine({defaultLayout: 'main'}))
 // app.engine("handlebars", engine({defaultLayout: "main"}));
 
 app.set('view engine', 'handlebars')
-
+app.set("views", path.join(__dirname, "views"));
 
 
 // app.set("view engine", "handlebars");
@@ -72,7 +72,7 @@ app.use(express.static(path.join(__dirname,'/views/public')))
 
 app.get("/",function(req, res){
     
-      res.render('desligamento')
+      res.render('home')
    
    })
 
