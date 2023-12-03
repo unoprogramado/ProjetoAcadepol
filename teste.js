@@ -55,7 +55,7 @@ app.use(express.json())
 // })
 app.get("/",function(req, res){
     // console.log(req.user.Nome)
-    res.render("home")
+    res.render("desligamento")
 
 })
 
