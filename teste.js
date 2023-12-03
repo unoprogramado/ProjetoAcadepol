@@ -81,7 +81,7 @@ app.get("/",function(req, res){
 app.get("/atribuicao",function(req, res){
     
  tipo = "atribuicao"
-   res.render('atribuicao', {user: req.user.Nome})
+   res.render('atribuicao')
    
 })
   
