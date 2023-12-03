@@ -25,7 +25,7 @@ app.set('view engine', 'handlebars')
 
 // var hbs = expressHbs.create({});
 
-app.use(express.static(path.join(__dirname + '../../' + '/public')))
+// app.use(express.static(path.join(__dirname + '../../' + '/public')))
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
