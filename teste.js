@@ -133,9 +133,9 @@ app.get("/",function(req, res){
 //     res.redirect('/login');
 //   }
 
-// app.listen(8081, function(){
-//     console.log("Servidor rondando ")
-// })
+app.listen(8081, function(){
+    console.log("Servidor rondando ")
+})
 
 
 // const router = require("./router/index.router");
