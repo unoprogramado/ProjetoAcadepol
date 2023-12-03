@@ -72,7 +72,7 @@ app.use(express.static(path.join(__dirname,'/views/public')))
 
 
 app.get("/",function(req, res){
-    
+    console.log(req.user.Nome)
       res.render('home')
    
    })
@@ -81,7 +81,7 @@ app.get("/",function(req, res){
 app.get("/atribuicao",function(req, res){
     
  tipo = "atribuicao"
-   res.render('atribuicao')
+   res.render('atribuicao',{user: req.user.Nome})
    
 })
   
