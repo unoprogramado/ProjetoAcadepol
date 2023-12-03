@@ -3,9 +3,9 @@ const app = express()
 const path = require("path")
 const {engine}  = require("express-handlebars");
 // const expressHbs = require("express-handlebars");
-// const Sequelize = require("sequelize")
+const Sequelize = require("sequelize")
 // const session = require("express-session")
-// const usuarioDb = require("./models/Usuario")
+const usuarioDb = require("./models/Usuario")
 // var data =  new Date()
 // var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
 // const passport = require("passport")
@@ -72,7 +72,8 @@ app.use(express.static(path.join(__dirname,'/views/public')))
 
 
 app.get("/",function(req, res){
-    console.log(req.user.Nome)
+  usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario)})
+    // console.log(req.user.Nome)
       res.render('home')
    
    })
