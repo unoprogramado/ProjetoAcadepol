@@ -76,9 +76,6 @@ app.get("/",function(req, res){
    
    })
 
-app.listen(5000, () => {
-    console.log("Server is running on port 5000!");
-});
 
 // app.get("/atribuicao",isAuthenticated,function(req, res){
     
