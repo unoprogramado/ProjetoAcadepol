@@ -63,9 +63,10 @@ app.use(express.static(path.join(__dirname,'/views/public')))
 //     })(req,res,next)
     
 // })
+
 // app.get("/",function(req, res){
 //     // console.log(req.user.Nome)
-//     res.render("desligamento")
+//     res.render("home")
 
 // })
 
@@ -77,24 +78,24 @@ app.get("/",function(req, res){
    })
 
 
-// app.get("/atribuicao",isAuthenticated,function(req, res){
+app.get("/atribuicao",function(req, res){
     
-//  tipo = "atribuicao"
-//    res.render('atribuicao', {user: req.user.Nome})
+ tipo = "atribuicao"
+   res.render('atribuicao', {user: req.user.Nome})
    
-// })
+})
   
-// app.get("/desligamento",isAuthenticated,function(req, res){
-//     tipo = "Desligamento"
-//     res.render('desligamento', {user: req.user.Nome})
+app.get("/desligamento",function(req, res){
+    tipo = "Desligamento"
+    res.render('desligamento', {user: req.user.Nome})
  
-//  })
+ })
 
-//  app.get("/promocao",isAuthenticated,function(req, res){
-//     tipo = "Promocao"
-//     res.render('promocao',{user: req.user.Nome})
+ app.get("/promocao",function(req, res){
+    tipo = "Promocao"
+    res.render('promocao',{user: req.user.Nome})
  
-//  })
+ })
  
 // app.post("/pdf",isAuthenticated,function(req, res){
     
