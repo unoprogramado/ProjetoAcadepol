@@ -22,7 +22,7 @@ const expressHbs = require("express-handlebars");
 
 app.engine('handlebars',engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
-
+app.set("views", path.join(__dirname, "views"));
 // var hbs = expressHbs.create({});
 
 // app.use(express.static(path.join(__dirname + '../../' + '/public')))
