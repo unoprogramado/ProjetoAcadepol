@@ -3,27 +3,27 @@ const app = express()
 const path = require("path")
 const {engine}  = require("express-handlebars");
 const expressHbs = require("express-handlebars");
-const Sequelize = require("sequelize")
-const session = require("express-session")
-const usuarioDb = require("./models/Usuario")
-var data =  new Date()
-var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
-const passport = require("passport")
-require("./config/auth")(passport)
+// const Sequelize = require("sequelize")
+// const session = require("express-session")
+// const usuarioDb = require("./models/Usuario")
+// var data =  new Date()
+// var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
+// const passport = require("passport")
+// require("./config/auth")(passport)
 
-app.use(session({
-    secret: "dfasjkfefu33483j437387fcef77F7fyDF6868767FDFfDdf67df678d6fD7FF",
-    resave: false,
-    saveUninitialized: true
-}))
+// app.use(session({
+//     secret: "dfasjkfefu33483j437387fcef77F7fyDF6868767FDFfDdf67df678d6fD7FF",
+//     resave: false,
+//     saveUninitialized: true
+// }))
 
-app.use(passport.initialize())
-app.use(passport.session())
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 app.engine('handlebars',engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
-var hbs = expressHbs.create({});
+// var hbs = expressHbs.create({});
 
 app.use(express.static(path.join(__dirname + '../../' + '/public')))
 
@@ -34,7 +34,7 @@ app.use(express.json())
 
 
 
-var tipo 
+// var tipo 
 
 // app.get("/login",function(req, res){
     
@@ -54,7 +54,7 @@ var tipo
     
 // })
 app.get("/",function(req, res){
-    console.log(req.user.Nome)
+    // console.log(req.user.Nome)
     res.render("home")
 
 })
