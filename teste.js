@@ -5,11 +5,22 @@ const {engine}  = require("express-handlebars");
 // const expressHbs = require("express-handlebars");
 const Sequelize = require("sequelize")
 // const session = require("express-session")
-const usuarioDb = require("./models/Usuario")
+// const usuarioDb = require("./models/Usuario")
 // var data =  new Date()
 // var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
 // const passport = require("passport")
 // require("./config/auth")(passport)
+
+
+
+const sequelize =  new Sequelize ("railway", "root", "-Bg4Fa6HDGe-cG544Df13F25G4d2aCA4", {
+    host: "viaduct.proxy.rlwy.net",
+    port:"22445",
+    dialect: "mysql"
+})
+
+
+
 
 // app.use(session({
 //     secret: "dfasjkfefu33483j437387fcef77F7fyDF6868767FDFfDdf67df678d6fD7FF",
