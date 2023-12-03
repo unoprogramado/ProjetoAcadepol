@@ -33,7 +33,9 @@ app.set("views", path.join(__dirname, "views"));
 // var hbs = expressHbs.create({});
 
 // app.use(express.static(path.join(__dirname + '../../' + '/public')))
-app.use(express.static(__dirname + '../../' + '/public'));
+// app.use(express.static(__dirname + '../../' + '/public'));
+app.use(express.static(path.join(__dirname,'/views/public')))
+
 
 // app.use(express.urlencoded({extended: false}))
 // app.use(express.json())
