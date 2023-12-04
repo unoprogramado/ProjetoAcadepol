@@ -75,25 +75,19 @@ app.post("/login",function(req, res,next){
     
 })
 
-// app.get("/",function(req, res){
-//     // console.log(req.user.Nome)
-//     res.render("home")
 
-// })
 
 
 app.get("/",isAuthenticated,function(req, res){
- 
-    // console.log(req.user.Nome)
-      res.render('home')
-   
-   })
+    console.log(req.user.Nome)
+    res.render("home")
 
+})
 
 app.get("/atribuicao",isAuthenticated,function(req, res){
     
  tipo = "atribuicao"
-   res.render('atribuicao')
+   res.render('atribuicao', {user: req.user.Nome})
    
 })
   
