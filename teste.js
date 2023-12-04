@@ -7,8 +7,8 @@ const expressHbs = require("express-handlebars");
 const Sequelize = require("sequelize")
 const session = require("express-session")
 const usuarioDb = require("./models/Usuario")
-const RedisStore = require('connect-redis')(session);
-const redisClient = require('redis').createClient();
+
+
 // var data =  new Date()
 // var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
 const passport = require("passport")
@@ -23,7 +23,6 @@ require("./config/auth")(passport)
 
 
 app.use(session({
-    store: new RedisStore({ client: redisClient }),
     secret: "dfasjkfefu33483j437387fcef77F7fyDF6868767FDFfDdf67df678d6fD7FF",
     resave: false,
     saveUninitialized: true
@@ -64,17 +63,17 @@ app.use(express.json())
    
 //    })
 
-// app.post("/login",function(req, res,next){
+app.post("/login",function(req, res,next){
 
     
-//     passport.authenticate("local",{
-//         successRedirect: "/",
-//         failureRedirect: "/login",
+    passport.authenticate("local",{
+        successRedirect: "/",
+        failureRedirect: "/login",
         
         
-//     })(req,res,next)
+    })(req,res,next)
     
-// })
+})
 
 // app.get("/",function(req, res){
 //     // console.log(req.user.Nome)
@@ -83,7 +82,7 @@ app.use(express.json())
 // })
 
 
-app.get("/",function(req, res){
+app.get("/",isAuthenticated,function(req, res){
  
     // console.log(req.user.Nome)
       res.render('home')
@@ -91,26 +90,26 @@ app.get("/",function(req, res){
    })
 
 
-app.get("/atribuicao",function(req, res){
+app.get("/atribuicao",isAuthenticated,function(req, res){
     
  tipo = "atribuicao"
    res.render('atribuicao')
    
 })
   
-app.get("/desligamento",function(req, res){
+app.get("/desligamento",isAuthenticated,function(req, res){
     tipo = "Desligamento"
     res.render('desligamento', {user: req.user.Nome})
  
  })
 
- app.get("/promocao",function(req, res){
+ app.get("/promocao",isAuthenticated,function(req, res){
     tipo = "Promocao"
     res.render('promocao',{user: req.user.Nome})
  
  })
  
-app.post("/pdf",function(req, res){
+app.post("/pdf",isAuthenticated,function(req, res){
     
    
        
@@ -136,12 +135,12 @@ app.post("/pdf",function(req, res){
    
  })
 
-// function isAuthenticated(req, res, next) {
-//     if (req.isAuthenticated()) {
-//       return next();
-//     }
-//     res.redirect('/login');
-//   }
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/login');
+  }
 
 app.listen(8081, function(){
     console.log("Servidor rondando ")
