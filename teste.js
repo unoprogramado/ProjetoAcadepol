@@ -80,7 +80,7 @@ app.use(express.static(path.join(__dirname,'/views/public')))
 
 
 app.get("/",function(req, res){
-  // usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario)})
+  usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario)})
     // console.log(req.user.Nome)
       res.render('home')
    
