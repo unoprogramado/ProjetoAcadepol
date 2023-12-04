@@ -15,7 +15,7 @@
     "puppeteer": "^19.2.2",
     "sequelize": "^6.33.0",
     "redis": "^4.6.11",
-    "connect-redis": "^7.1.0",
+    "connect-redis": "^7.1.0"
   },
   "devDependencies": {
    
