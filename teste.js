@@ -13,7 +13,7 @@ const Sequelize = require("sequelize")
 // require("./config/auth")(passport)
 
 console.lgo(process.env.DB_HOST)
-console.log("teste"
+console.log("teste")
 
 
 
