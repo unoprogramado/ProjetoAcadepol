@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname,'/views/public')))
 // app.use(bodyParser.json())
   
 
-usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario)})
+usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log("bispo"+usuario)})
 
 // var tipo 
 
