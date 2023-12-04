@@ -5,7 +5,7 @@ const {engine}  = require("express-handlebars");
 require('dotenv').config()
 const expressHbs = require("express-handlebars");
 const Sequelize = require("sequelize")
-const session = require("express-session")
+// const session = require("express-session")
 const usuarioDb = require("./models/Usuario")
 // var data =  new Date()
 // var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
@@ -19,11 +19,11 @@ const usuarioDb = require("./models/Usuario")
 
 
 
-app.use(session({
-    secret: "dfasjkfefu33483j437387fcef77F7fyDF6868767FDFfDdf67df678d6fD7FF",
-    resave: false,
-    saveUninitialized: true
-}))
+// app.use(session({
+//     secret: "dfasjkfefu33483j437387fcef77F7fyDF6868767FDFfDdf67df678d6fD7FF",
+//     resave: false,
+//     saveUninitialized: true
+// }))
 
 // app.use(passport.initialize())
 // app.use(passport.session())
@@ -35,8 +35,8 @@ app.set('view engine', 'handlebars')
 app.set("views", path.join(__dirname, "views"));
 
 
-app.set("view engine", "handlebars");
-// app.set("views", path.join(__dirname, "views"));
+
+
 
 var hbs = expressHbs.create({});
 
