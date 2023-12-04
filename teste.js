@@ -7,6 +7,8 @@ const expressHbs = require("express-handlebars");
 const Sequelize = require("sequelize")
 const session = require("express-session")
 const usuarioDb = require("./models/Usuario")
+const RedisStore = require('connect-redis')(session);
+const redisClient = require('redis').createClient();
 // var data =  new Date()
 // var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
 const passport = require("passport")
@@ -19,7 +21,9 @@ require("./config/auth")(passport)
 
 
 
+
 app.use(session({
+    store: new RedisStore({ client: redisClient }),
     secret: "dfasjkfefu33483j437387fcef77F7fyDF6868767FDFfDdf67df678d6fD7FF",
     resave: false,
     saveUninitialized: true
