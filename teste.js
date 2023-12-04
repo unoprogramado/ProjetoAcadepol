@@ -110,7 +110,7 @@ app.post("/pdf",isAuthenticated,function(req, res){
     
    
        
-        var dados = req.body
+        // var dados = req.body
         
         hbs.handlebars.registerHelper("if", function(a) {
             if(a == "atribuicao" ){
