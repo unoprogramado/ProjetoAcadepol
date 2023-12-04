@@ -13,8 +13,8 @@ const usuarioDb = require("./models/Usuario")
 // require("./config/auth")(passport)
 
 
-console.log("bispo bispo")
-usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario)})
+
+usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log("bispo)})
 
 
 
