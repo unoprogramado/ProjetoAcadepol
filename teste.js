@@ -12,12 +12,9 @@ const Sequelize = require("sequelize")
 // const passport = require("passport")
 // require("./config/auth")(passport)
 
+console.lgo(process.env.DB_HOST)
+console.log("teste"
 
-const sequelize =  new Sequelize (process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
-    port:process.env.DB_PORT,
-    dialect: process.env.BD
-})
 
 
 
