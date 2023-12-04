@@ -50,7 +50,7 @@ app.use(express.json())
 // app.use(bodyParser.json())
   
 
-usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario.dataValues.Nome)})
+// usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario.dataValues.Nome)})
 
 // var tipo 
 
