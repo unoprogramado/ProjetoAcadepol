@@ -57,11 +57,11 @@ app.use(express.json())
 
 // var tipo 
 
-// app.get("/login",function(req, res){
+app.get("/login",function(req, res){
     
-//       res.render('login')
+      res.render('login')
    
-//    })
+   })
 
 app.post("/login",function(req, res,next){
 
