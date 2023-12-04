@@ -55,7 +55,7 @@ app.use(express.json())
 
 // usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log(usuario.dataValues.Nome)})
 
-// var tipo 
+var tipo 
 
 app.get("/login",function(req, res){
     
