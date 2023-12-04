@@ -9,8 +9,8 @@ const session = require("express-session")
 const usuarioDb = require("./models/Usuario")
 // var data =  new Date()
 // var Data =`Destiny, ${data.getDate()} De ${data.toLocaleString("pt-BR", {month: 'long'})} ${data.getFullYear()}`
-// const passport = require("passport")
-// require("./config/auth")(passport)
+const passport = require("passport")
+require("./config/auth")(passport)
 
 
 
@@ -25,8 +25,8 @@ app.use(session({
     saveUninitialized: true
 }))
 
-// app.use(passport.initialize())
-// app.use(passport.session())
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.engine('handlebars',engine({defaultLayout: 'main'}))
 
