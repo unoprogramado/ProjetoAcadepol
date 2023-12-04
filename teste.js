@@ -13,7 +13,7 @@ const usuarioDb = require("./models/Usuario")
 // require("./config/auth")(passport)
 
 
-console.log("teste")
+console.log("bispo bispo")
 
 
 
