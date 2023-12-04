@@ -3,7 +3,7 @@ const app = express()
 const path = require("path")
 const {engine}  = require("express-handlebars");
 require('dotenv').config()
-// const expressHbs = require("express-handlebars");
+const expressHbs = require("express-handlebars");
 const Sequelize = require("sequelize")
 // const session = require("express-session")
 const usuarioDb = require("./models/Usuario")
@@ -35,26 +35,21 @@ app.set('view engine', 'handlebars')
 app.set("views", path.join(__dirname, "views"));
 
 
-// app.set("view engine", "handlebars");
+app.set("view engine", "handlebars");
 // app.set("views", path.join(__dirname, "views"));
 
-// var hbs = expressHbs.create({});
+var hbs = expressHbs.create({});
 
 // app.use(express.static(path.join(__dirname + '../../' + '/public')))
 // app.use(express.static(__dirname + '../../' + '/public'));
 app.use(express.static(path.join(__dirname,'/views/public')))
 
 
-// app.use(express.urlencoded({extended: false}))
-// app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
 // app.use(bodyParser.json())
   
-console.log(process.env.DB_HOST)
-console.log(process.env.DB_NAME)
-console.log(process.env.DB_USER)
-console.log(process.env.DB_PASSWORD)
-console.log(process.env.DB_PORT)
-console.log(process.env.BD)
+
 // usuarioDb.findOne({where:{nome: "Lucas Bispo"}}).then((usuario) => {console.log("bispo"+usuario)})
 
 // var tipo 
@@ -95,7 +90,7 @@ app.get("/",function(req, res){
 app.get("/atribuicao",function(req, res){
     
  tipo = "atribuicao"
-   res.render('atribuicao',{user: req.user.Nome})
+   res.render('atribuicao')
    
 })
   
