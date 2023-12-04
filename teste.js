@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const path = require("path")
 const {engine}  = require("express-handlebars");
+require('dotenv').config()
 // const expressHbs = require("express-handlebars");
 const Sequelize = require("sequelize")
 // const session = require("express-session")
@@ -12,7 +13,7 @@ const Sequelize = require("sequelize")
 // require("./config/auth")(passport)
 
 console.log(process.env.DB_HOST)
-
+console.log("teste"
 
 
 
