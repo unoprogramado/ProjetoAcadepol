@@ -1,9 +1,9 @@
 const { Sequelize } = require("sequelize")
 
-const sequelize =  new Sequelize ("railway", "root", "-Bg4Fa6HDGe-cG544Df13F25G4d2aCA4", {
-    host: "viaduct.proxy.rlwy.net",
-    port:"22445",
-    dialect: "mysql"
+const sequelize =  new Sequelize (process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    port:process.env.DB_PORT,
+    dialect: process.env.BD
 })
 
 
