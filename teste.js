@@ -79,7 +79,7 @@ app.post("/login",function(req, res,next){
 
 
 app.get("/",isAuthenticated,function(req, res){
-    console.log(req.user.Nome)
+    console.log("LOGADO COMO: "+req.user.Nome)
     res.render("home")
 
 })
